@@ -38,6 +38,7 @@ typedef u_char *(*ngx_http_log_handler_pt)(ngx_http_request_t *r,
 #include <ngx_http_core_module.h>
 
 #if (NGX_HTTP_V2)
+#include <ngx_http_priority.h>
 #include <ngx_http_v2.h>
 #endif
 #if (NGX_HTTP_V3)
@@ -72,6 +73,7 @@ typedef struct {
     ngx_uint_t           http_version;
     ngx_uint_t           code;
     ngx_uint_t           count;
+    u_char              *line_start;
     u_char              *start;
     u_char              *end;
 } ngx_http_status_t;
